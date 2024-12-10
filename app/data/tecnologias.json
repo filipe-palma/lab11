@@ -1,0 +1,75 @@
+[
+    {
+      "title": "HTML",
+      "image": "/images/html.jpg",
+      "description": "Linguagem de marcação para estruturar páginas web.",
+      "rating": 5
+    },
+    {
+      "title": "CSS",
+      "image": "/images/css.jpg",
+      "description": "Estilos para personalizar páginas web.",
+      "rating": 4
+    },
+    {
+      "title": "JavaScript",
+      "image": "/images/javascript.jpg",
+      "description": "Linguagem de programação para interatividade em páginas web.",
+      "rating": 5
+    },
+    {
+      "title": "JSON",
+      "image": "/images/json.jpg",
+      "description": "Formato leve para troca de dados entre sistemas.",
+      "rating": 5
+    },
+    {
+      "title": "API RESTful",
+      "image": "/images/api.jpg",
+      "description": "Padrão de design para criação de APIs.",
+      "rating": 4
+    },
+    {
+      "title": "Swagger",
+      "image": "/images/swagger.jpg",
+      "description": "Ferramenta para documentar e testar APIs.",
+      "rating": 4
+    },
+    {
+      "title": "GitHub",
+      "image": "/images/github.jpg",
+      "description": "Plataforma para hospedagem de código e controle de versão.",
+      "rating": 5
+    },
+    {
+      "title": "Codespaces",
+      "image": "/images/codespaces.jpg",
+      "description": "Ambiente de desenvolvimento baseado em nuvem no GitHub.",
+      "rating": 4
+    },
+    {
+      "title": "GitHub Pages",
+      "image": "/images/github-pages.jpg",
+      "description": "Serviço para publicar sites estáticos diretamente de repositórios GitHub.",
+      "rating": 4
+    },
+    {
+      "title": "React.js",
+      "image": "/images/react.jpg",
+      "description": "Biblioteca JavaScript para construir interfaces de usuário.",
+      "rating": 5
+    },
+    {
+      "title": "Next.js",
+      "image": "/images/nextjs.jpg",
+      "description": "Framework React para desenvolvimento de aplicações web modernas.",
+      "rating": 5
+    },
+    {
+      "title": "Vercel",
+      "image": "/images/vercel.jpg",
+      "description": "Plataforma para deploy e hospedagem de aplicações web.",
+      "rating": 5
+    }
+  ]
+  

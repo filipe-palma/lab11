@@ -6,14 +6,14 @@ import Card from '@/components/Card/Card';
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const Produtos = () => {
-  const { data, error } = useSWR('/api/products', fetcher);
+  const { data, error } = useSWR<Product[]>('/api/products', fetcher);
 
   if (error) return <div>Erro ao carregar dados</div>;
   if (!data) return <div>Carregando...</div>;
 
   return (
     <div className="flex flex-wrap justify-center">
-      {data.map((produto: any) => (
+      {data.map((produto) => (
         <Card
           key={produto.id}
           title={produto.title}

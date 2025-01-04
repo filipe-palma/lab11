@@ -85,6 +85,7 @@ const Produtos = () => {
         onChange={(e) => setSearch(e.target.value)}
         className="mb-4 p-2 border rounded"
       />
+      <h2 className="text-2xl font-bold mt-8">Selecione os seus Produtos</h2>
       <div className="flex flex-wrap justify-center">
         {filteredData.map((produto) => (
           <Card
@@ -93,13 +94,14 @@ const Produtos = () => {
             image={produto.image}
             description={produto.description}
             rating={produto.rating.rate}
+            ratingCount={produto.rating.count}
             price={produto.price}
             addItemToCart={addItemToCart}
             product={produto}
           />
         ))}
       </div>
-      <div className="cart-container">
+      <div className="cart-container text-center">
         <h2 className="text-2xl font-bold mt-8">Carrinho</h2>
         <div className="flex flex-wrap justify-center">
           {cart.map((produto, index) => (
@@ -109,6 +111,7 @@ const Produtos = () => {
               image={produto.image}
               description={produto.description}
               rating={produto.rating?.rate}
+              ratingCount={produto.rating?.count}
               price={produto.price}
               removeItemFromCart={removeItemFromCart}
               product={produto}
@@ -118,12 +121,12 @@ const Produtos = () => {
         <div className="mt-4">
           <p className="text-xl font-bold">Total: {total.toFixed(2)}€</p>
           <label className="block mt-2">
+            Sou estudante do DEISI
             <input 
               type="checkbox" 
               checked={isStudent} 
               onChange={(e) => setIsStudent(e.target.checked)} 
             />
-            Sou estudante
           </label>
           <label className="block mt-2">
             Cupão de desconto:

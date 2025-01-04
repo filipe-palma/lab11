@@ -6,13 +6,14 @@ interface CardProps {
   image: string;
   description: string;
   rating?: number;
+  ratingCount?: number;
   price?: number;
   addItemToCart?: (product: Product) => void;
   removeItemFromCart?: (product: Product) => void;
   product?: Product;
 }
 
-const Card = ({ title, image, description, rating, price, addItemToCart, removeItemFromCart, product }: CardProps) => (
+const Card = ({ title, image, description, rating, ratingCount, price, addItemToCart, removeItemFromCart, product }: CardProps) => (
   <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-xs m-4 flex flex-col items-center">
     <Image src={image} alt={title} width={400} height={300} className="w-full h-48 object-cover" />
     <div className="p-4 text-center">
@@ -23,7 +24,7 @@ const Card = ({ title, image, description, rating, price, addItemToCart, removeI
       )}
       {rating && (
         <p className="mt-2 font-bold">
-          Avaliação: {rating} <span className="text-yellow-500">⭐</span>
+          Avaliação: {rating} <span className="text-yellow-500">⭐</span> {ratingCount && `(${ratingCount} avaliações)`}
         </p>
       )}
       {addItemToCart && product && (

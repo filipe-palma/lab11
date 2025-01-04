@@ -51,3 +51,10 @@ main {
   background: rgb(255, 136, 39);
 }
 
+/* Adicione isso em app/globals.css ou crie um novo arquivo CSS */
+.cart-container {
+  background-color: #74ee7e; /* Escolha a cor de fundo desejada */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}

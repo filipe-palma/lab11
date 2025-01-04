@@ -78,7 +78,7 @@ const Produtos = () => {
   if (!data) return <div>Carregando...</div>;
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <input 
         placeholder="Pesquisar"
         value={search}
@@ -99,50 +99,52 @@ const Produtos = () => {
           />
         ))}
       </div>
-      <h2 className="text-2xl font-bold mt-8">Carrinho</h2>
-      <div className="flex flex-wrap justify-center">
-        {cart.map((produto, index) => (
-          <Card
-            key={index}
-            title={produto.title}
-            image={produto.image}
-            description={produto.description}
-            rating={produto.rating?.rate}
-            price={produto.price}
-            removeItemFromCart={removeItemFromCart}
-            product={produto}
-          />
-        ))}
-      </div>
-      <div className="mt-4">
-        <p className="text-xl font-bold">Total: {total.toFixed(2)}€</p>
-        <label className="block mt-2">
-          <input 
-            type="checkbox" 
-            checked={isStudent} 
-            onChange={(e) => setIsStudent(e.target.checked)} 
-          />
-          Sou estudante
-        </label>
-        <label className="block mt-2">
-          Cupão de desconto:
-          <input 
-            type="text" 
-            value={coupon} 
-            onChange={(e) => setCoupon(e.target.value)} 
-            className="ml-2 p-1 border rounded"
-          />
-        </label>
-        <button onClick={buy} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">
-          Comprar
-        </button>
-      </div>
-      {reference && discountedTotal !== null && (
-        <div className="mt-4">
-          <p className="text-xl font-bold">Referência: {reference}</p>
-          <p className="text-xl font-bold">Total com desconto: {typeof discountedTotal === 'number' ? discountedTotal.toFixed(2) : '0.00'}€</p>
+      <div className="cart-container">
+        <h2 className="text-2xl font-bold mt-8">Carrinho</h2>
+        <div className="flex flex-wrap justify-center">
+          {cart.map((produto, index) => (
+            <Card
+              key={index}
+              title={produto.title}
+              image={produto.image}
+              description={produto.description}
+              rating={produto.rating?.rate}
+              price={produto.price}
+              removeItemFromCart={removeItemFromCart}
+              product={produto}
+            />
+          ))}
         </div>
-      )}
+        <div className="mt-4">
+          <p className="text-xl font-bold">Total: {total.toFixed(2)}€</p>
+          <label className="block mt-2">
+            <input 
+              type="checkbox" 
+              checked={isStudent} 
+              onChange={(e) => setIsStudent(e.target.checked)} 
+            />
+            Sou estudante
+          </label>
+          <label className="block mt-2">
+            Cupão de desconto:
+            <input 
+              type="text" 
+              value={coupon} 
+              onChange={(e) => setCoupon(e.target.value)} 
+              className="ml-2 p-1 border rounded"
+            />
+          </label>
+          <button onClick={buy} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">
+            Comprar
+          </button>
+        </div>
+        {reference && discountedTotal !== null && (
+          <div className="mt-4">
+            <p className="text-xl font-bold">Referência: {reference}</p>
+            <p className="text-xl font-bold">Total com desconto: {typeof discountedTotal === 'number' ? discountedTotal.toFixed(2) : '0.00'}€</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,10 +6,10 @@ interface CardProps {
   image: string;
   description: string;
   rating?: number;
-  price: number;
+  price?: number;
   addItemToCart?: (product: Product) => void;
   removeItemFromCart?: (product: Product) => void;
-  product: Product;
+  product?: Product;
 }
 
 const Card = ({ title, image, description, rating, price, addItemToCart, removeItemFromCart, product }: CardProps) => (
@@ -26,12 +26,12 @@ const Card = ({ title, image, description, rating, price, addItemToCart, removeI
           Avaliação: {rating} <span className="text-yellow-500">⭐</span>
         </p>
       )}
-      {addItemToCart && (
+      {addItemToCart && product && (
         <button onClick={() => addItemToCart(product)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">
           Adicionar ao Carrinho
         </button>
       )}
-      {removeItemFromCart && (
+      {removeItemFromCart && product && (
         <button onClick={() => removeItemFromCart(product)} className="mt-2 bg-red-500 text-white px-4 py-2 rounded">
           Remover
         </button>
